@@ -69,7 +69,7 @@
 	When eu escolho a opção “Gratuito”
 	Then o campo para informar o preço é escondido
 
-	Scenario: Tentou criar curso sem definir tipo de assinatura
+	Scenario: Criar curso sem tipo de assinatura
 	Given estou cadastrando um novo curso
 	And estou na fase de escolha da assinatura
 	When eu tento avançar na criação do curso sem escolher a assinatura
