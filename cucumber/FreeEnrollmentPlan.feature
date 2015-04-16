@@ -73,7 +73,7 @@
 	Given estou cadastrando um novo curso
 	And estou na fase de escolha da assinatura
 	When eu tento avançar na criação do curso sem escolher a assinatura
-	Then aparece uma mensagem de erro “Para avançar, é necessário escolher uma opção de assinatura para este curso”
+	Then eu não consigo avançar
 
 	Scenario: mudança de assinatura
 	Given estou na pagina de configuraçao do curso
