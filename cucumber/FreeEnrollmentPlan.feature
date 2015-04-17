@@ -44,7 +44,7 @@
 	
 	Scenario: Avisa aos usuários cadastrados em um curso que possui “Assinatura Gratuita”, que seu curso agora possui uma “Assinatura Mensal”
 	Given que um curso tem assinatura gratuita
-	When o curso é alterado para assinatura mensual
+	When o curso é alterado para assinatura mensal
 	Then boqueia o acesso de todos os usuários cadastrados naquele curso
 	And notifica todos os usuários cadastrados naquele curso sobre a modificação da assinatura
 
