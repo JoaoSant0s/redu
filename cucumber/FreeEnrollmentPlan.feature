@@ -20,7 +20,7 @@
 	When eu digito o preço como zero
 	Then a opção de pagamento do curso é salva como “Gratuito”
 
-	Scenario: Modificar assinatura de curso de “Mensal” para “Gratuita”
+	Scenario: Modificar assinatura de curso de “Mensal” para “Gratuito”
 	Given estou na página de configurações da assinatura de um curso
 	When eu seleciono a opção de assinatura do curso para “Gratuito”
 	Then o curso é alterado para “Assinatura Gratuita”
@@ -30,10 +30,11 @@
 	When eu preencho com "0" o valor do curso
 	Then o curso é alterado para “Assinatura Gratuita”
 
-	Scenario: Modificar assinatura de um curso que possui “Assinatura Gratuita” para “Assinatura Mensal”
+	Scenario: Modificar assinatura de curso de "Gratuito" para "Mensal"
 	Given estou na pagina de configurações de assinatura de um curso
 	When eu seleciono a opção assinatura mensal
-	And eu preencho o valor do curso
+	And eu preencho o valor do curso com o valor "200"
+	And eu confirmo as alterações
 	Then o curso é alterado para “Assinatura Mensal”
 
 	Scenario: Avisa aos usuários cadastrados em um curso que possui “Assinatura Mensal”, que seu curso agora possui uma “Assinatura Gratuita”
