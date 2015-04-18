@@ -21,21 +21,26 @@
 	Then a opção de pagamento do curso é salva como “Gratuito”
 
 	Scenario: Modificar assinatura de curso de “Mensal” para “Gratuito”
-	Given estou na página de configurações da assinatura de um curso
-	When eu seleciono a opção de assinatura do curso para “Gratuito”
-	Then o curso é alterado para “Assinatura Gratuita”
+	Given estou na página de configurações da assinatura do curso "Curso de Ruby e Rails"
+	When eu seleciono a opção de assinatura do curso "Curso de Ruby e Rails" para “Gratuito”
+	And eu confirmo as alterações
+	Then o tipo da assinatura do curso "Curso de Ruby e Rails" é alterado para “Gratuito”
 
 	Scenario: Modificar assinatura de curso de “Mensal” para “Gratuita”, dado que escolheu preço zero
-	Given estou na página de configurações da assinatura de um curso
+	Given estou na página de configurações da assinatura do curso "Curso de Ruby e Rails"
+	And o curso "Curso de Ruby e Rails" é um curso com assinatura "Mensal"
 	When eu preencho com "0" o valor do curso
-	Then o curso é alterado para “Assinatura Gratuita”
+	And o sistema me pergunta se eu quero alterar o tipo de assinatura do curso "Curso de Ruby e Rails" para "Gratuito"
+	And eu confirmo a alteração
+	Then o tipo de assinatura do curso "Curso de Ruby e Rails" é alterado para “Gratuito”
 
 	Scenario: Modificar assinatura de curso de "Gratuito" para "Mensal"
-	Given estou na pagina de configurações de assinatura de um curso
-	When eu seleciono a opção assinatura mensal
+	Given estou na pagina de configurações de assinatura do curso "Curso de Ruby e Rails"
+	And o curso "Curso de Ruby e Rails" é um curso com assinatura "Gratuito"
+	When eu seleciono a opção assinatura "Mensal"
 	And eu preencho o valor do curso com o valor "200"
 	And eu confirmo as alterações
-	Then o curso é alterado para “Assinatura Mensal”
+	Then o tipo de assinatura do curso "Curso de Ruby e Rails" é alterado para “Mensal”
 
 	Scenario: Notificar os usuarios sobre a mudança na assinatura de um curso de "Mensal" para "Gratuito"
 	Given que o curso "Curso de Ruby e Rails" tem "Assinatura Mensal"
