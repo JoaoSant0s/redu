@@ -31,7 +31,6 @@
 	And o curso "Curso de Ruby e Rails" é um curso com assinatura "Mensal"
 	When eu preencho com "0" o valor do curso "Curso de Ruby and Rails"
 	And o sistema me pergunta se eu quero alterar o tipo de assinatura do curso "Curso de Ruby e Rails" para "Gratuito"
-	And eu confirmo a alteração no curso "Curso de Ruby e Rails"
 	Then o tipo de assinatura do curso "Curso de Ruby e Rails" é alterado para “Gratuito”
 
 	Scenario: Modificar assinatura de curso de "Gratuito" para "Mensal"
