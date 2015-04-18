@@ -10,6 +10,7 @@ When(/^o curso "([^"]*)" é alterado para assinatura mensal$/) do |nome_curso|
 	assert_equal(curso.enrollment_type, 'monthly')
 end
 
+#igor, existe uma funcao chamada "send_blocked_notice" em https://github.com/OpenRedu/OpenRedu/blob/master/app/models/plan.rb que acho que serve para esse step
 Then(/^bloqueia o acesso de todos os usuários cadastrados no curso "([^"]*)"$/) do |nome_curso|
 	curso = Course.find(:name => nome_curso)
 	curso.course_enrollments.each do |assinatura|
