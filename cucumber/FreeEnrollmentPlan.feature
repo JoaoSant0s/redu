@@ -37,10 +37,10 @@
 	And eu confirmo as alterações
 	Then o curso é alterado para “Assinatura Mensal”
 
-	Scenario: Avisa aos usuários cadastrados em um curso que possui “Assinatura Mensal”, que seu curso agora possui uma “Assinatura Gratuita”
-	Given que um curso tem Assinatura Mensal
-	When o curso é alterado para “Assinatura Gratuita”
-	Then notifica todos os usuários cadastrados naquele curso sobre a modificação da assinatura
+	Scenario: Avisa os usuarios sobre a mudança na assinatura de um curso de "Mensal" para "Gratuito"
+	Given que o curso "Curso de Ruby e Rails" tem "Assinatura Mensal"
+	When o tipo de assinatura do curso "Curso de Ruby e Rails" é alterado para “Assinatura Gratuita”
+	Then notifica todos os usuários cadastrados no curso "Curso de Ruby and Rails" sobre a modificação da assinatura
 
 	
 	Scenario: Avisa aos usuários cadastrados em um curso que possui “Assinatura Gratuita”, que seu curso agora possui uma “Assinatura Mensal”
