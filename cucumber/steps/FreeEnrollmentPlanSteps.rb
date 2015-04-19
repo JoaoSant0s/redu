@@ -1,3 +1,4 @@
+# language: en
 #igor lira
 #Scenario: Notificar os usuarios sobre a mudança na assinatura de um curso de "Gratuito" para "Mensal"
 Given(/^que um curso "([^"]*)" tem assinatura gratuita $/) do |nome_curso|
